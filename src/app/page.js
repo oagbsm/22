@@ -49,38 +49,39 @@ export default function HomePage() {
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex items-center justify-between h-20 flex-wrap gap-4">
       <div className="flex items-center gap-4 flex-shrink-0">
-        {/* <a href="#" className="flex items-center gap-3"> */}
+        <a href="#" className="flex items-center gap-3">
           <div className="w-20 h-12 relative overflow-hidden">
             <img src="/logo.png" alt="City Consulting logo" className="object-contain w-full h-full" />
           </div>
           <span className="sr-only">City Consulting</span>
-        {/* </a> */}
-      </div>
-
-      <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-        <a href="#home" className="hover:underline">HOME</a>
-        <a href="#about" className="hover:underline">ABOUT</a>
-        <a href="#services" className="hover:underline">SERVICES</a>
-        <a href="#contact" className="hover:underline">CONTACT</a>
-      </nav>
-
-      <div className="flex items-center gap-4 w-full md:w-auto justify-end">
-        <a
-          href="/login"
-          className="inline-flex items-center gap-2 rounded-md px-4 py-2 text-white font-semibold shadow-md w-full md:w-auto justify-center"
-          style={{ backgroundColor: brightOrange }}
-        >
-          Login
-        </a>
-
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-2 rounded-md px-4 py-2 text-white font-semibold shadow-md w-full md:w-auto justify-center"
-          style={{ backgroundColor: brightOrange }}
-        >
-          Request Free Guidance
         </a>
       </div>
+
+ <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+  <Link href="#home" className="hover:underline">HOME</Link>
+  <Link href="#about" className="hover:underline">ABOUT</Link>
+  <Link href="#services" className="hover:underline">SERVICES</Link>
+  <Link href="#contact" className="hover:underline">CONTACT</Link>
+</nav>
+
+<div className="flex items-center gap-4 w-full md:w-auto justify-end">
+  <Link
+    href="/login"
+    className="inline-flex items-center gap-2 rounded-md px-4 py-2 text-white font-semibold shadow-md w-full md:w-auto justify-center"
+    style={{ backgroundColor: brightOrange }}
+  >
+    Login
+  </Link>
+
+  <Link
+    href="#contact"
+    className="inline-flex items-center gap-2 rounded-md px-4 py-2 text-white font-semibold shadow-md w-full md:w-auto justify-center"
+    style={{ backgroundColor: brightOrange }}
+  >
+    Request Free Guidance
+  </Link>
+</div>
+
     </div>
   </div>
 </header>
