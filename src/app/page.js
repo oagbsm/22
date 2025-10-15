@@ -3,28 +3,26 @@
 import React, { useState, useEffect } from "react";
 
 export default function ComingSoonPage() {
-  // Set countdown target (24 hours from now)
-  const [timeLeft, setTimeLeft] = useState(24 * 60 * 60); // in seconds
+  // Fixed target date: 16 Oct 2025, 3 PM Somalia time (UTC+3)
+  const targetTime = new Date("2025-10-16T15:00:00+03:00").getTime();
+
+  const [timeLeft, setTimeLeft] = useState(targetTime - Date.now());
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      setTimeLeft(targetTime - now);
     }, 1000);
 
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, []);
 
-  // Convert seconds to hh:mm:ss
-  const formatTime = (seconds) => {
-    const h = Math.floor(seconds / 3600)
-      .toString()
-      .padStart(2, "0");
-    const m = Math.floor((seconds % 3600) / 60)
-      .toString()
-      .padStart(2, "0");
-    const s = Math.floor(seconds % 60)
-      .toString()
-      .padStart(2, "0");
+  const formatTime = (ms) => {
+    if (ms <= 0) return "00:00:00";
+    const totalSeconds = Math.floor(ms / 1000);
+    const h = Math.floor(totalSeconds / 3600).toString().padStart(2, "0");
+    const m = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, "0");
+    const s = (totalSeconds % 60).toString().padStart(2, "0");
     return `${h}:${m}:${s}`;
   };
 
@@ -38,7 +36,7 @@ export default function ComingSoonPage() {
       {/* Countdown */}
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Our Website is Coming Soon</h1>
-        <p className="text-lg sm:text-xl mb-8">Launching in:</p>
+        <p className="text-lg sm:text-xl mb-8">Launching at 3:00 PM Somalia Time, 16th October 2025</p>
         <div className="text-5xl sm:text-6xl font-extrabold tracking-wide bg-orange-500 px-8 py-4 rounded-lg shadow-lg">
           {formatTime(timeLeft)}
         </div>
