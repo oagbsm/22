@@ -36,7 +36,7 @@ export default function ComingSoonPage() {
       {/* Countdown */}
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Our Website is Coming Soon</h1>
-        <p className="text-lg sm:text-xl mb-8">Launching at 3:00 PM Somalia Time, 16th October 2025</p>
+        {/* <p className="text-lg sm:text-xl mb-8">Launching at 3:00 PM Somalia Time, 16th October 2025</p> */}
         <div className="text-5xl sm:text-6xl font-extrabold tracking-wide bg-orange-500 px-8 py-4 rounded-lg shadow-lg">
           {formatTime(timeLeft)}
         </div>
