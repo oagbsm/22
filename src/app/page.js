@@ -358,15 +358,7 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
             <h4 className="text-[#ff7a33] font-bold mb-3">City Consulting LLC</h4>
             <p className="text-sm text-gray-200">1395 E. Dublin Granville Rd STE 222E, Columbus OH 43229<br/>cityconsultingllc@gmail.com<br/>+1 (614) 318-2825</p>
           </div>
-          <div>
-            <h5 className="text-[#ff7a33] font-semibold mb-3">Useful Links</h5>
-            <ul className="text-sm text-gray-200 space-y-2">
-              <li>Home</li>
-              <li>About</li>
-              <li>Services</li>
-              <li>Contact</li>
-            </ul>
-          </div>
+
           <div>
             <h5 className="text-[#ff7a33] font-semibold mb-3">Get Connected</h5>
             <p className="text-sm text-gray-200">Follow us for updates and insights into accounting and business advisory.</p>
