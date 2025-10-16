@@ -12,6 +12,8 @@ export default function CityConsultingHome() {
 const formRef = useRef();
 const [loading, setLoading] = useState(false);
 const [success, setSuccess] = useState("");
+const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
 const handleSubmit = (e) => {
   e.preventDefault();
   setLoading(true);
@@ -189,17 +191,25 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-            <a href="#home" className="hover:text-[#ff7a33]">Home</a>
-            <a href="/login" className="hover:text-[#ff7a33]">Login</a>
-            <a href="#services" className="hover:text-[#ff7a33]">Services</a>
-            <a href="#testimonials" className="hover:text-[#ff7a33]">Testimonials</a>
-            <a href="#contact" className="hover:text-[#ff7a33]">Contact</a>
-          </nav>
+<nav className={`md:flex items-center gap-8 text-gray-700 font-medium ${mobileMenuOpen ? "flex flex-col absolute top-full left-0 w-full bg-white shadow-md py-4 md:py-0 md:relative md:flex-row" : "hidden md:flex"}`}>
+  <a href="#home" className="hover:text-[#ff7a33] px-4 py-2">Home</a>
+  <a href="/login" className="hover:text-[#ff7a33] px-4 py-2">Login</a>
+  <a href="#services" className="hover:text-[#ff7a33] px-4 py-2">Services</a>
+  <a href="#testimonials" className="hover:text-[#ff7a33] px-4 py-2">Testimonials</a>
+  <a href="#contact" className="hover:text-[#ff7a33] px-4 py-2">Contact</a>
+</nav>
+
 
           <div className="flex items-center gap-3">
-            <a href="mailto:cityconsultingllc@gmail.com" className="hidden sm:inline-block text-sm px-4 py-2 rounded-md bg-[#ff7a33] text-white font-semibold hover:bg-[#e96b28]">Get In Touch</a>
-            <button className="p-2 rounded-md text-gray-500 hover:bg-gray-100 md:hidden" aria-label="menu">☰</button>
+            <a href="#contact" className="hidden sm:inline-block text-sm px-4 py-2 rounded-md bg-[#ff7a33] text-white font-semibold hover:bg-[#e96b28]">Get In Touch</a>
+           <button 
+  className="p-2 rounded-md text-gray-500 hover:bg-gray-100 md:hidden" 
+  aria-label="menu"
+  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+>
+  ☰
+</button>
+
           </div>
         </div>
       </header>
@@ -314,7 +324,7 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
 
       {/* Contact */}
       <motion.section id="contact" initial="hidden" whileInView="visible" variants={sectionFade} transition={{ duration: 0.6 }} className="bg-gradient-to-br from-white to-orange-50 py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-start">
+<div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
           <div>
             <h3 className="text-3xl font-bold mb-4" style={{ color: darkBlue }}>Let's Request A Schedule For Free Guidance</h3>
             <p className="text-gray-600 mb-6">Contact Info<br/>1395 E. Dublin Granville Rd STE 222E, Columbus OH 43229<br/>cityconsultingllc@gmail.com<br/>+1 (614) 318-2825</p>
@@ -323,19 +333,19 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
           </div>
 
 <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-md space-y-4">
-<input type="text" name="name" placeholder="Full name" required className="..." />
-<input type="email" name="email" placeholder="Email" required className="..." />
-<input type="tel" name="phone" placeholder="Phone" className="..." />
-<select name="service" className="...">
+<input type="text" name="name" placeholder="Full name" required className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff7a33]" />
+<input type="email" name="email" placeholder="Email" required className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff7a33]" />
+<input type="tel" name="phone" placeholder="Phone" className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff7a33]" />
+<select name="service" className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff7a33]">
   <option>Service of interest</option>
   {services.map(s => (<option key={s.id} value={s.id}>{s.title}</option>))}
 </select>
-<textarea name="message" placeholder="Tell us about your needs" rows={4} className="..."></textarea>
+<textarea name="message" placeholder="Tell us about your needs" rows={4} className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff7a33]"></textarea>
+
 
 <button type="submit" disabled={loading} className="w-full bg-[#ff7a33] text-white py-3 rounded-md font-semibold hover:bg-[#e96b28]">
   {loading ? "Sending..." : "Request Free Guidance"}
 </button>
-{success && <p className="text-green-500 mt-2">{success}</p>}
 
           </form>
         </div>
