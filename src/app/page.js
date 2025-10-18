@@ -175,6 +175,11 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
   ];
 
   const sectionFade = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
+const scrollToTop = () => {
+    setMobileMenuOpen(false); // Close mobile menu if open
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   return (
     <div className="text-gray-900 font-sans">
@@ -182,8 +187,12 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
       <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="logo" className="w-20 h-12 rounded-md object-cover shadow" />
-            <div>
+<img 
+  src="/logo.png" 
+  alt="logo" 
+  className="w-20 h-12 rounded-md object-cover shadow cursor-pointer"
+  onClick={scrollToTop}
+/>            <div>
               <h1 className="text-xl font-bold" style={{ color: darkBlue }}>
                 City Consulting LLC
               </h1>
@@ -191,13 +200,22 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
             </div>
           </div>
 
-<nav className={`md:flex items-center gap-8 text-gray-700 font-medium ${mobileMenuOpen ? "flex flex-col absolute top-full left-0 w-full bg-white shadow-md py-4 md:py-0 md:relative md:flex-row" : "hidden md:flex"}`}>
-  <a href="#home" className="hover:text-[#ff7a33] px-4 py-2">Home</a>
-  <a href="/login" className="hover:text-[#ff7a33] px-4 py-2">Login</a>
-  <a href="#services" className="hover:text-[#ff7a33] px-4 py-2">Services</a>
-  <a href="#testimonials" className="hover:text-[#ff7a33] px-4 py-2">Testimonials</a>
-  <a href="#contact" className="hover:text-[#ff7a33] px-4 py-2">Contact</a>
+<nav className={`md:flex items-center gap-5 text-gray-700  font-medium ${mobileMenuOpen ? "flex flex-col absolute top-full left-0 w-full bg-white shadow-md py-4 md:py-0 md:relative md:flex-row" : "hidden md:flex"}`}>
+  <a href="#home" onClick={() => setMobileMenuOpen()} className="hover:text-[#ff7a33] px-4 py-2">Home</a>
+  <a href="#services" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#ff7a33] px-4 py-2">Services</a>
+  <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#ff7a33] px-4 py-2">Testimonials</a>
+
+  <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#ff7a33] px-4 py-2">Contact</a>
+    <a href="/login" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#ff7a33] px-4 py-2">Login</a>
+
 </nav>
+{/* <nav
+  className={`transition-all duration-300 md:flex items-center gap-8 text-gray-700 font-medium ${
+    mobileMenuOpen
+      ? "flex flex-col absolute top-full left-0 w-full bg-white shadow-md py-4"
+      : "hidden md:flex"
+  }`}
+></nav> */}
 
 
           <div className="flex items-center gap-3">
@@ -249,7 +267,7 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
                 <img src={s.image} alt={s.title} className="w-full h-44 object-cover" />
                 <div className="p-6">
                   <h4 className="text-xl font-semibold mb-2" style={{ color: darkBlue }}>{s.title}</h4>
-                  <p className="text-gray-600 mb-4">{s.short}</p>
+                  <p className="text-gray-600 font-sans mb-4">{s.short}</p>
                   <div className="flex items-center gap-3">
                     <button onClick={() => setOpenService(openService === s.id ? null : s.id)} className="text-sm font-semibold text-[#ff7a33] hover:underline">
                       {openService === s.id ? 'Hide details' : 'Learn more'}
@@ -258,7 +276,7 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
                   </div>
 
                   {openService === s.id && (
-                    <motion.pre initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 0.4 }} className="mt-4 text-sm text-gray-700 whitespace-pre-wrap">
+                    <motion.pre initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 0.4 }} className="mt-4 text-sm text-gray-700 font-sans whitespace-pre-wrap">
                       {s.details}
                     </motion.pre>
                   )}
