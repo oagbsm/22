@@ -345,7 +345,7 @@ const scrollToTop = () => {
 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
           <div>
             <h3 className="text-3xl font-bold mb-4" style={{ color: darkBlue }}>Let's Request A Schedule For Free Guidance</h3>
-            <p className="text-gray-600 mb-6">Contact Info<br/>1395 E. Dublin Granville Rd STE 222E, Columbus OH 43229<br/>cityconsultingllc@gmail.com<br/>+1 (614) 318-2825</p>
+            <p className="text-gray-600 mb-6">Contact Info<br/>info@cityconsulting.com<br/>+1 (614) 318-2825</p>
 
 
           </div>
@@ -374,7 +374,7 @@ const scrollToTop = () => {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
           <div>
             <h4 className="text-[#ff7a33] font-bold mb-3">City Consulting LLC</h4>
-            <p className="text-sm text-gray-200">1395 E. Dublin Granville Rd STE 222E, Columbus OH 43229<br/>cityconsultingllc@gmail.com<br/>+1 (614) 318-2825</p>
+            <p className="text-sm text-gray-200">info@cityconsulting.com<br/>+1 (614) 318-2825</p>
           </div>
 
           <div>
