@@ -134,16 +134,16 @@ A disciplined cash strategy is the key to surviving volatility and funding growt
       image:
         "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e",
     },
-    {
-      id: "valuation",
-      title: "Business Valuation",
-      short:
-        "In-depth analysis to identify the drivers of your company’s value for transactions, planning, or disputes.",
-      details:
-        `Uses include estate planning, buy/sell, divorce, ESOPs, and transaction planning. We combine market research, financial modeling, and scenario analysis to arrive at defensible valuations.`,
-      image:
-        "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a",
-    },
+{
+  id: "app-development",
+  title: "App Development",
+  short:
+    "Custom mobile and web app development services",
+  details:
+    `We design and build scalable, high-performance mobile and web applications tailored to your business needs. Our services cover UI/UX design, frontend and backend development, API integration, testing, and deployment. Whether launching a new product or improving an existing app, we ensure seamless functionality, security, and user experience.`,
+  image:
+    "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a",
+},
     {
       id: "tax",
       title: "Tax Consulting",
