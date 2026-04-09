@@ -31,13 +31,9 @@ export const stats = [
 
 export const logoCompanies = [
   { name: "Google", src: "https://cdn.simpleicons.org/google/ffffff" },
-  { name: "Microsoft", src: "https://cdn.simpleicons.org/microsoft/ffffff" },
-  { name: "Amazon", src: "https://cdn.simpleicons.org/amazon/ffffff" },
   { name: "Shopify", src: "https://cdn.simpleicons.org/shopify/ffffff" },
   { name: "Stripe", src: "https://cdn.simpleicons.org/stripe/ffffff" },
   { name: "HubSpot", src: "https://cdn.simpleicons.org/hubspot/ffffff" },
-  { name: "Oracle", src: "https://cdn.simpleicons.org/oracle/ffffff" },
-  { name: "Salesforce", src: "https://cdn.simpleicons.org/salesforce/ffffff" },
 ];
 
 export const serviceDropdownSections = [
