@@ -55,6 +55,28 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: 'technology.cityconsulting.com',
+          },
+        ],
+        destination: '/technology',
+        permanent: false,
+      },
+      {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: 'www.technology.cityconsulting.com',
+          },
+        ],
+        destination: '/technology',
+        permanent: false,
+      },
+      {
         source: '/:path*',
         has: [
           {
@@ -71,7 +93,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/',
+        source: '/technology',
         has: [
           {
             type: 'host',
@@ -81,17 +103,17 @@ const nextConfig = {
         destination: '/technology',
       },
       {
-        source: '/:path*',
+        source: '/technology/:path*',
         has: [
           {
             type: 'host',
-            value: 'www.technology.cityconsulting.com',
+            value: 'technology.cityconsulting.com',
           },
         ],
         destination: '/technology/:path*',
       },
       {
-        source: '/',
+        source: '/technology',
         has: [
           {
             type: 'host',
@@ -99,6 +121,16 @@ const nextConfig = {
           },
         ],
         destination: '/technology',
+      },
+      {
+        source: '/technology/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.technology.cityconsulting.com',
+          },
+        ],
+        destination: '/technology/:path*',
       },
     ];
   },
