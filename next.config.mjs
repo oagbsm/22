@@ -1,4 +1,3 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -11,6 +10,16 @@ const nextConfig = {
   // Redirect root domain to www (optional but recommended)
   async redirects() {
     return [
+      {
+        source: '/technology',
+        destination: 'https://technology.cityconsulting.com',
+        permanent: true,
+      },
+      {
+        source: '/technology/:path*',
+        destination: 'https://technology.cityconsulting.com/:path*',
+        permanent: true,
+      },
       {
         source: '/:path*',
         has: [

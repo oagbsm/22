@@ -206,6 +206,7 @@ const scrollToTop = () => {
   <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#ff7a33] px-4 py-2">Testimonials</a>
 
   <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#ff7a33] px-4 py-2">Contact</a>
+  <a href="/technology" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#ff7a33] px-4 py-2">Technology</a>
     <a href="/login" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#ff7a33] px-4 py-2">Login</a>
 
 </nav>
@@ -238,11 +239,9 @@ const scrollToTop = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight" style={{ color: brightOrange }}>
-                Efficient Accounting Solutions to Grow Your Business
-              </h1>
+Business Consulting, Accounting, and Technology Solutions That Grow Your Business              </h1>
               <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 opacity-90">
-                City Consulting LLC provides a wide range of services for individuals and businesses — from tax management and bookkeeping to audits and financial planning. Let our experienced team handle the numbers so you can focus on running your business.
-              </p>
+City Consulting LLC provides accounting, advisory, and technology solutions for modern businesses. From tax management and bookkeeping to custom systems, app development, and digital transformation, we help you operate smarter and grow faster.              </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
                 <a href="#contact" className="rounded-md px-5 py-3 text-white font-semibold shadow hover:opacity-95" style={{ backgroundColor: brightOrange }}>Schedule Free Guidance</a>
                 <a href="#about" className="text-white/90 underline">Learn More</a>
