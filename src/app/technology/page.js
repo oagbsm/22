@@ -127,18 +127,22 @@ return () => {
               </div>
 
               <div className="mt-10 flex flex-wrap gap-3">
-                {heroChips.map((service, index) => (
-                  <span
-                    key={service}
-                    className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-500 ${
-                      index === activeService
-                        ? "border-orange-300/60 bg-white text-[#111111]"
-                        : "border-white/15 bg-white/[0.05] text-white/82"
-                    }`}
-                  >
-                    {service}
-                  </span>
-                ))}
+                {heroChips.map((service) => {
+                  const isActive = service === activeServiceTitle;
+
+                  return (
+                    <span
+                      key={service}
+                      className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-500 ${
+                        isActive
+                          ? "border-orange-300/60 bg-white text-[#111111]"
+                          : "border-white/15 bg-white/[0.05] text-white/82"
+                      }`}
+                    >
+                      {service}
+                    </span>
+                  );
+                })}
               </div>
             </div>
 
