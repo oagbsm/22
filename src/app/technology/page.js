@@ -24,7 +24,11 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 const [expandedService, setExpandedService] = useState(0);
 const [showScrollTop, setShowScrollTop] = useState(false);
+const [selectedNeed, setSelectedNeed] = useState("Website Development");
 
+const whatsappMessage = encodeURIComponent(
+  `Hi, I am interested in ${selectedNeed}. I would like to discuss requirements, pricing, and next steps.`
+);
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   useEffect(() => {
     document.title =
@@ -101,7 +105,7 @@ return () => {
               </h1>
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-                We create elite websites, bespoke software, POS systems,
+                We create elite Applications, bespoke software, POS systems,
                 automation, and security-conscious digital infrastructure for
                 businesses that want to look sharper, move faster, and close
                 more clients.
@@ -249,11 +253,7 @@ return () => {
               We blend premium presentation with business-first execution.
             </h2>
             <p className="mt-6 text-base leading-8 text-[#4f5867] sm:text-lg">
-              Technology.CityConsulting exists to help serious businesses
-              compete at a higher level. We combine polished design direction
-              inspired by top global agencies with practical engineering that
-              improves sales, operations, and scale. The goal is simple: make
-              your company look elite and perform like it.
+              We build serious software, websites, business systems, and IT solutions for companies that need quality execution they can rely on. Our focus is not appearances for the sake of appearances. We care about performance, usability, stability, and building systems that help businesses grow, operate better, and move with confidence.
             </p>
           </div>
 
@@ -274,10 +274,7 @@ return () => {
                 systems required to win.
               </h3>
               <p className="mt-6 max-w-2xl text-base leading-8 text-[#4f5867] sm:text-lg">
-                Unlike generic agencies, we are not trying to sell you design
-                for the sake of design. We build assets that support lead
-                generation, internal efficiency, stronger customer experience,
-                and smarter long-term growth.
+                We are a real software and IT solutions provider with serious developers focused on delivery, technical quality, and business value. Everything we build is meant to support lead generation, stronger operations, better customer experience, and long term growth.
               </p>
             </div>
           </div>
@@ -365,26 +362,61 @@ return () => {
               </p>
             </div>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="mailto:hello@technology.cityconsulting.com"
-                className="inline-flex items-center justify-center rounded-full bg-[#0a0d14] px-7 py-3 text-base font-semibold text-white transition hover:opacity-95"
-              >
-                hello@technology.cityconsulting.com
-              </a>
-              <a
-                href="https://wa.me/"
-                className="inline-flex items-center justify-center rounded-full border border-[#111827]/10 px-7 py-3 text-base font-semibold text-[#0a0d14] transition hover:bg-[#fafafa]"
-              >
-                Chat on WhatsApp
-              </a>
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center rounded-full border border-[#111827]/10 px-7 py-3 text-base font-semibold text-[#0a0d14] transition hover:bg-[#fafafa]"
-              >
-                Review Services Again
-              </a>
-            </div>
+<div className="mt-10 grid gap-4 lg:grid-cols-[1fr_auto_auto] lg:items-end">
+  <div>
+    <label
+      htmlFor="need-select"
+      className="mb-2 block text-sm font-semibold uppercase tracking-[0.14em] text-[#4f5867]"
+    >
+      What do you need
+    </label>
+    <select
+      id="need-select"
+      value={selectedNeed}
+      onChange={(e) => setSelectedNeed(e.target.value)}
+      className="w-full rounded-2xl border border-[#111827]/10 bg-white px-5 py-4 text-base font-medium text-[#0a0d14] outline-none transition focus:border-[#111827]/30"
+    >
+      <option>Website Development</option>
+      <option>iOS App Development</option>
+      <option>Android App Development</option>
+      <option>POS System</option>
+      <option>Bespoke Software</option>
+      <option>Automation and Integrations</option>
+      <option>Care Home Management System</option>
+      <option>Travel Agent Platform</option>
+      <option>Cybersecurity Support</option>
+      <option>General Enquiry</option>
+    </select>
+  </div>
+
+  <a
+    href="mailto:enquiries@cityconsulting.com"
+    className="inline-flex items-center justify-center rounded-full bg-[#0a0d14] px-7 py-4 text-base font-semibold text-white transition hover:opacity-95"
+  >
+    enquiries@cityconsulting.com
+  </a>
+
+  <a
+    href={`https://wa.me/252610647045?text=${whatsappMessage}`}
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex items-center justify-center rounded-full border border-[#111827]/10 px-7 py-4 text-base font-semibold text-[#0a0d14] transition hover:bg-[#fafafa]"
+  >
+    Chat on WhatsApp
+  </a>
+</div>
+
+<div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center">
+  <a
+    href="#services"
+    className="inline-flex items-center justify-center rounded-full border border-[#111827]/10 px-7 py-3 text-base font-semibold text-[#0a0d14] transition hover:bg-[#fafafa]"
+  >
+    Review Services Again
+  </a>
+  <p className="text-sm leading-7 text-[#4f5867]">
+    Your WhatsApp message will be prepared automatically based on the option you choose.
+  </p>
+</div>
           </div>
         </div>
       </section>

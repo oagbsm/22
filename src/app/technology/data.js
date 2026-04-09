@@ -224,18 +224,18 @@ export const featuredSolutions = [
 
 export const actionBlocks = [
   {
-    title: "Already moving like a real agency",
+    title: "Serious solutions for serious businesses",
     text:
-      "Your website should not look like a concept. It should feel like an active, premium technology company already delivering for serious businesses.",
+      "We build software, websites, and IT systems for companies that need reliable execution, strong technical standards, and solutions that are ready to support real growth.",
   },
   {
-    title: "Built for paid traffic and conversion",
+    title: "Built to strengthen your business",
     text:
-      "Every major section pushes toward one of two outcomes: a strategy call or a serious enquiry.",
+      "Whether you need more leads, better operations, stronger customer experience, or clearer internal systems, we build technology that supports measurable business progress.",
   },
   {
-    title: "Expandable service information",
+    title: "Clear process from idea to delivery",
     text:
-      "Visitors can open a service, understand what you actually do, and act immediately without hunting for details.",
+      "We help you move from concept to execution with proper planning, strong development, and a practical approach that keeps the project focused and commercially useful.",
   },
 ];
