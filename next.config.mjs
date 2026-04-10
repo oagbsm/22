@@ -9,6 +9,10 @@ const nextConfig = {
 
   // Redirect root domain to www (optional but recommended)
   async redirects() {
+    if (process.env.NODE_ENV === 'development') {
+      return [];
+    }
+
     return [
       {
         source: '/technology',
