@@ -39,6 +39,11 @@ export default function ContactSection() {
     setStatus({ type: "", message: "" });
 
     try {
+      console.log("EmailJS env check", {
+        serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+      });
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
@@ -59,9 +64,13 @@ export default function ContactSection() {
         message: "",
       });
     } catch (error) {
+      console.error("EmailJS error:", error);
       setStatus({
         type: "error",
-        message: "Something went wrong while sending your enquiry. Please try again.",
+        message:
+          error?.text ||
+          error?.message ||
+          "Something went wrong while sending your enquiry. Please try again.",
       });
     } finally {
       setIsSending(false);
