@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import TechnologyHeader from "../components/TechnologyHeader";
 import FeaturedSolutions from "../components/FeaturedSolutions";
 import ServiceSection from "../components/ServiceSection";
+import ContactSection from "../components/ContactSection";
 
 import {
   rotatingServices,
@@ -24,11 +25,6 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 const [expandedService, setExpandedService] = useState(0);
 const [showScrollTop, setShowScrollTop] = useState(false);
-const [selectedNeed, setSelectedNeed] = useState("Website Development");
-
-const whatsappMessage = encodeURIComponent(
-  `Hi, I am interested in ${selectedNeed}. I would like to discuss requirements, pricing, and next steps.`
-);
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   useEffect(() => {
     document.title =
@@ -345,85 +341,9 @@ return () => {
         </div>
       </section>
 
-      <section
-        id="contact"
-        className="bg-[linear-gradient(180deg,#ffffff,#f6f4ff)] text-[#0a0d14]"
-      >
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-10">
-          <div className="rounded-[2.2rem] border border-[#111827]/10 bg-white p-10 shadow-[0_30px_80px_rgba(15,23,42,0.08)] sm:p-14">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-fuchsia-600">
-                Let’s build something world-class
-              </p>
-              <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                Your next website, platform, POS system, or bespoke build starts
-                here.
-              </h2>
-              <p className="mt-6 text-base leading-8 text-[#4f5867] sm:text-lg">
-                Tell us what you are building, what is broken, or where you want
-                to grow. We will help you shape the right technology solution
-                and move fast.
-              </p>
-            </div>
-
-<div className="mt-10 grid gap-4 lg:grid-cols-[1fr_auto_auto] lg:items-end">
-  <div>
-    <label
-      htmlFor="need-select"
-      className="mb-2 block text-sm font-semibold uppercase tracking-[0.14em] text-[#4f5867]"
-    >
-      What do you need
-    </label>
-    <select
-      id="need-select"
-      value={selectedNeed}
-      onChange={(e) => setSelectedNeed(e.target.value)}
-      className="w-full rounded-2xl border border-[#111827]/10 bg-white px-5 py-4 text-base font-medium text-[#0a0d14] outline-none transition focus:border-[#111827]/30"
-    >
-      <option>Website Development</option>
-      <option>iOS App Development</option>
-      <option>Android App Development</option>
-      <option>POS System</option>
-      <option>Bespoke Software</option>
-      <option>Automation and Integrations</option>
-      <option>Care Home Management System</option>
-      <option>Travel Agent Platform</option>
-      <option>Cybersecurity Support</option>
-      <option>General Enquiry</option>
-    </select>
-  </div>
-
-  <a
-    href="mailto:enquiries@cityconsulting.com"
-    className="inline-flex items-center justify-center rounded-full bg-[#0a0d14] px-7 py-4 text-base font-semibold text-white transition hover:opacity-95"
-  >
-    enquiries@cityconsulting.com
-  </a>
-
-  <a
-    href={`https://wa.me/252610647045?text=${whatsappMessage}`}
-    target="_blank"
-    rel="noreferrer"
-    className="inline-flex items-center justify-center rounded-full border border-[#111827]/10 px-7 py-4 text-base font-semibold text-[#0a0d14] transition hover:bg-[#fafafa]"
-  >
-    Chat on WhatsApp
-  </a>
-</div>
-
-<div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center">
-  <a
-    href="#services"
-    className="inline-flex items-center justify-center rounded-full border border-[#111827]/10 px-7 py-3 text-base font-semibold text-[#0a0d14] transition hover:bg-[#fafafa]"
-  >
-    Review Services Again
-  </a>
-  <p className="text-sm leading-7 text-[#4f5867]">
-    Your WhatsApp message will be prepared automatically based on the option you choose.
-  </p>
-</div>
-          </div>
-        </div>
-      </section>
+      <div id="contact">
+        <ContactSection />
+      </div>
 <button
   type="button"
   aria-label="Scroll to top"
