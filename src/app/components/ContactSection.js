@@ -63,6 +63,8 @@ export default function ContactSection() {
         service: "Business Starter Pack",
         message: "",
       });
+
+      window.location.href = "/thank-you";
     } catch (error) {
       console.error("EmailJS error:", error);
       setStatus({
